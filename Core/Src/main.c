@@ -111,7 +111,7 @@ int main(void)
 	  switch (state) {
       	  case TRIG_BEGIN:
       		  GPIOA->BSRR = HCSR04_TRIG_Pin;
-      		  while (state != TRIG_END);
+      		  while (state != TRIG_END); // only ~10us, might as well busy wait
       		  break;
       	  case TRIG_END:
       		  GPIOA->BRR = HCSR04_TRIG_Pin;

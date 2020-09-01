@@ -210,6 +210,7 @@ void TIM2_IRQHandler(void)
 		state = TRIG_BEGIN;
 	}
 
+	// CC period elapsed - End of trigger pulse
 	if (LL_TIM_IsActiveFlag_CC1(TIM2)) {
 		LL_TIM_ClearFlag_CC1(TIM2);
 		state = TRIG_END;
